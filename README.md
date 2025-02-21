@@ -1,4 +1,4 @@
-# 🐕 SGRAA - Sistema de Gestão para Adoção de Animais Domésticos
+# 🐕 PROJETO_SGRAA - Sistema de Gestão para Adoção de Animais Domésticos
 
 ## 📝 Descrição do Projeto
 
