@@ -1,39 +1,39 @@
-🐕 SGRAA - Sistema de Gestão para Adoção de Animais Domésticos
+# 🐕 SGRAA - Sistema de Gestão para Adoção de Animais Domésticos
 
-📝 Descrição do Projeto
+## 📝 Descrição do Projeto
 
-O SGRAA é uma solução inovadora para a gestão de adoção de animais domésticos, promovendo um processo transparente e eficiente. O sistema permite o cadastro de animais, controle de adoções, gerenciamento de voluntários, registro de resgates e administração de doações. Ele foi desenvolvido com um foco especial em segurança, escalabilidade e facilidade de uso.
+O **SGRAA** é uma solução inovadora para a gestão de adoção de animais domésticos, promovendo um processo transparente e eficiente. O sistema permite o cadastro de animais, controle de adoções, gerenciamento de voluntários, registro de resgates e administração de doações. Ele foi desenvolvido com um foco especial em segurança, escalabilidade e facilidade de uso.
 
-A aplicação utiliza Spring Boot para um backend eficiente, Spring Security para autenticação e controle de acessos, além de MySQL para armazenamento dos dados. O Postman pode ser utilizado para testar as requisições e validar os endpoints.
+A aplicação utiliza **Spring Boot** para um backend eficiente, **Spring Security** para autenticação e controle de acessos, além de **MySQL** para armazenamento dos dados. O Postman pode ser utilizado para testar as requisições e validar os endpoints.
 
-🔧 Tecnologias Utilizadas
+---
 
-☕ Java 23
+## 🔧 Tecnologias Utilizadas
 
-🚀 Spring Boot 3.x
+- ☕ **Java 23**
+- 🚀 **Spring Boot 3.x**
+- 🔐 **Spring Security** (Autenticação baseada em sessão e banco de dados)
+- 📦 **Spring Data JPA** (Hibernate para manipulação de dados)
+- 🗄️ **MySQL** (Banco de dados relacional)
+- 📜 **Maven** (Gerenciamento de dependências)
+- 📝 **Lombok** (Redução de código boilerplate)
+- 🛠️ **Postman** (Testes de API REST)
 
-🔐 Spring Security (Autenticação baseada em sessão e banco de dados)
+---
 
-📦 Spring Data JPA (Hibernate para manipulação de dados)
+## 🏗 Configuração do Projeto
 
-🗄️ MySQL (Banco de dados relacional)
+### 1️⃣ Configurar o Banco de Dados
 
-📜 Maven (Gerenciamento de dependências)
+1. Instale o MySQL e crie o banco de dados:
 
-📝 Lombok (Redução de código boilerplate)
-
-🛠️ Postman (Testes de API REST)
-
-🏗 Configuração do Projeto
-
-1️⃣ Configurar o Banco de Dados
-
-Instale o MySQL e crie o banco de dados:
-
+```sql
 CREATE DATABASE sgraa CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
 
-Atualize o arquivo `` com suas credenciais:
+2. Atualize o arquivo \`\` com suas credenciais:
 
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/sgraa?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=SUA_SENHA_AQUI
@@ -42,106 +42,134 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 # Configuração do Hibernate
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+```
 
-2️⃣ Compilar e Rodar o Projeto
+---
+
+### 2️⃣ Compilar e Rodar o Projeto
 
 No terminal, navegue até a pasta do projeto e execute:
 
+```sh
 mvn clean install
+```
 
 Para iniciar a aplicação:
 
+```sh
 mvn spring-boot:run
+```
 
 A aplicação estará disponível em:
 
+```
 http://localhost:8080
+```
 
-🔒 Autenticação e Segurança
+---
 
-O SGRAA utiliza Spring Security para autenticação baseada em sessão e controle de acesso. Os usuários possuem diferentes papéis no sistema:
+## 🔒 Autenticação e Segurança
 
-👨‍💼 ADMIN: Acesso total ao sistema, incluindo a gestão de usuários.
+O **SGRAA** utiliza **Spring Security** para autenticação baseada em sessão e controle de acesso. Os usuários possuem diferentes papéis no sistema:
 
-👨‍🚒 VOLUNTARIO: Acesso restrito às funcionalidades operacionais.
+- 👨‍💼 **ADMIN**: Acesso total ao sistema, incluindo a gestão de usuários.
+- 👨‍🚒 **VOLUNTARIO**: Acesso restrito às funcionalidades operacionais.
 
-🔹 Endpoints de Autenticação
+### 🔹 Endpoints de Autenticação
 
-🔑 Registrar um usuário (ADMIN ou VOLUNTÁRIO)
+#### 🔑 Registrar um usuário (ADMIN ou VOLUNTÁRIO)
 
+```http
 POST http://localhost:8080/api/auth/register
+```
 
+```json
 {
     "nome": "Admin",
     "email": "admin@email.com",
     "senha": "123456"
 }
+```
 
-🔑 Login (Gerenciado pelo Spring Security)
+#### 🔑 Login (Gerenciado pelo Spring Security)
 
+```http
 GET http://localhost:8080/api/auth/me
+```
 
-Retorna os dados do usuário logado.
+*Retorna os dados do usuário logado.*
 
-📌 Principais Endpoints da API
+---
 
-🦴 Animais
+## 📌 Principais Endpoints da API
 
-➕ POST /api/animais → Cadastrar um novo animal.
+### 🦴 Animais
 
-🔍 GET /api/animais → Listar todos os animais disponíveis.
+- ➕ **POST** `/api/animais` → Cadastrar um novo animal.
+- 🔍 **GET** `/api/animais` → Listar todos os animais disponíveis.
 
-🤝 Voluntários
+### 🤝 Voluntários
 
-➕ POST /api/voluntarios → Cadastrar um voluntário.
+- ➕ **POST** `/api/voluntarios` → Cadastrar um voluntário.
+- 🔍 **GET** `/api/voluntarios` → Listar todos os voluntários.
 
-🔍 GET /api/voluntarios → Listar todos os voluntários.
+### 🏡 Pretendentes à Adoção
 
-🏡 Pretendentes à Adoção
+- ➕ **POST** `/api/pretendentes` → Cadastrar um pretendente à adoção.
+- 🔍 **GET** `/api/pretendentes` → Listar todos os pretendentes.
 
-➕ POST /api/pretendentes → Cadastrar um pretendente à adoção.
+### 📜 Adoções
 
-🔍 GET /api/pretendentes → Listar todos os pretendentes.
+- ➕ **POST** `/api/adocoes` → Registrar uma nova adoção.
+- 🔍 **GET** `/api/adocoes` → Listar todas as adoções registradas.
 
-📜 Adoções
+### 🎁 Doações
 
-➕ POST /api/adocoes → Registrar uma nova adoção.
+- ➕ **POST** `/api/doacoes` → Registrar uma nova doação.
+- 🔍 **GET** `/api/doacoes` → Listar todas as doações recebidas.
 
-🔍 GET /api/adocoes → Listar todas as adoções registradas.
+### 🚑 Resgates
 
-🎁 Doações
+- ➕ **POST** `/api/resgates` → Registrar um novo resgate de animal.
+- 🔍 **GET** `/api/resgates` → Listar todos os resgates registrados.
 
-➕ POST /api/doacoes → Registrar uma nova doação.
+---
 
-🔍 GET /api/doacoes → Listar todas as doações recebidas.
+## 🔜 Próximos Passos
 
-🚑 Resgates
+✅ **Aprimorar regras de negócio** (ex.: validar a compatibilidade entre pretendente e animal).\
+✅ **Implementar logs e tratamento de erros** (uso de `@ExceptionHandler`).\
+🔜 **Desenvolver testes automatizados** com **JUnit e Mockito**.\
+🔜 **Melhorar a documentação** utilizando **Swagger**.
 
-➕ POST /api/resgates → Registrar um novo resgate de animal.
+---
 
-🔍 GET /api/resgates → Listar todos os resgates registrados.
-
-🔜 Próximos Passos
-
-✅ Aprimorar regras de negócio (ex.: validar a compatibilidade entre pretendente e animal).✅ Implementar logs e tratamento de erros (uso de @ExceptionHandler).🔜 Desenvolver testes automatizados com JUnit e Mockito.🔜 Melhorar a documentação utilizando Swagger.
-
-💡 Contribuição
+## 💡 Contribuição
 
 Se deseja contribuir com o projeto, siga os passos abaixo:
 
-Faça um fork do repositório.
+1. Faça um **fork** do repositório.
+2. Crie uma nova **branch** para a funcionalidade:
 
-Crie uma nova branch para a funcionalidade:
-
+```sh
 git checkout -b minha-feature
+```
 
-Faça as alterações e os commits:
+3. Faça as alterações e os commits:
 
+```sh
 git commit -m "Minha nova feature"
+```
 
-Envie para o repositório remoto:
+4. Envie para o repositório remoto:
 
+```sh
 git push origin minha-feature
+```
 
-Abra um Pull Request para análise.
+5. Abra um **Pull Request** para análise.
+
+---
+
+🚀 **SGRAA: Tornando a adoção mais organizada, segura e eficiente!** 🐾🏠
 
