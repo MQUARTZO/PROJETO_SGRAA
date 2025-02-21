@@ -1,4 +1,4 @@
-🐕 PROJETO_SGRAA - Sistema de Gestão para Adoção de Animais Domésticos
+🐕 SGRAA - Sistema de Gestão para Adoção de Animais Domésticos
 
 📝 Descrição do Projeto
 
@@ -26,13 +26,13 @@ A aplicação utiliza Spring Boot para um backend eficiente, Spring Security par
 
 🏗 Configuração do Projeto
 
-🔹 1️⃣ Configurar o Banco de Dados
+1️⃣ Configurar o Banco de Dados
 
 Instale o MySQL e crie o banco de dados:
 
 CREATE DATABASE sgraa CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-Atualize o arquivo application.properties com suas credenciais:
+Atualize o arquivo `` com suas credenciais:
 
 spring.datasource.url=jdbc:mysql://localhost:3306/sgraa?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
@@ -43,7 +43,7 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
-🔹 2️⃣ Compilar e Rodar o Projeto
+2️⃣ Compilar e Rodar o Projeto
 
 No terminal, navegue até a pasta do projeto e execute:
 
@@ -144,3 +144,4 @@ Envie para o repositório remoto:
 git push origin minha-feature
 
 Abra um Pull Request para análise.
+
