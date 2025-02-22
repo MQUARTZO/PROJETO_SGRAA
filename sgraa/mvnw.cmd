@@ -17,7 +17,11 @@
 @REM specific language governing permissions and limitations
 @REM under the License.
 @REM ----------------------------------------------------------------------------
-
+@REM ----------------------------------------------------------------------------
+@REM Este script iniciará o Apache Maven Wrapper em sistemas Windows.
+@REM Com ele será verificado se o Maven já está instalado e, caso contrário,
+@REM faz o download e instala automaticamente.
+@REM ----------------------------------------------------------------------------
 @REM ----------------------------------------------------------------------------
 @REM Apache Maven Wrapper startup batch script, version 3.3.2
 @REM
