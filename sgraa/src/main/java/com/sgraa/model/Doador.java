@@ -13,4 +13,7 @@ public class Doador {
     private String nome;
     private String contato;
     private String tipo; // Pessoa Física ou Instituição
+
+     @Column(nullable = true) // Campo opcional
+    private String raca;
 }
