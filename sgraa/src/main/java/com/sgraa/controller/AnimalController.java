@@ -6,21 +6,22 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/animais")
+@RestController // Define que esta classe é um controlador REST
+@RequestMapping("/api/animais") // Define o endpoint base para requisições
 public class AnimalController {
     private final AnimalService animalService;
 
+    // Injeta o serviço de Animal no controlador
     public AnimalController(AnimalService animalService) {
         this.animalService = animalService;
     }
 
-    @GetMapping
+    @GetMapping // Mapeia requisições GET para listar todos os animais
     public List<Animal> listar() {
         return animalService.listarTodos();
     }
 
-    @PostMapping
+    @PostMapping // Mapeia requisições POST para cadastrar um novo animal
     public Animal criar(@RequestBody Animal animal) {
         return animalService.salvar(animal);
     }
