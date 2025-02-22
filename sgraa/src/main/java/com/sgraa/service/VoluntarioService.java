@@ -49,3 +49,6 @@ public class VoluntarioService {
         return repository.save(voluntario);
     }
 }
+/**
+ * Esta classe pode ser expandida para incluir novos métodos, como validações de voluntários ou consultas personalizadas.
+ */
