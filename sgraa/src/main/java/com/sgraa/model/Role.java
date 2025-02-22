@@ -30,3 +30,6 @@ public class Role {
     @Column(unique = true) // Define que o valor deste campo deve ser único no banco de dados
     private String nome; // Exemplo: "ADMIN", "VOLUNTARIO"
 }
+/**
+ * Para um melhoria futura, a classe pode sofrer uma expanção para incluir novos campos, como descrição do papel ou nível de permissão.
+ */
