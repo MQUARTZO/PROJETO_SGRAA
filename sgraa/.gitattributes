@@ -1,2 +1,3 @@
+ // Configuração para compatibilidade entre sistemas operacionais
 /mvnw text eol=lf
 *.cmd text eol=crlf
