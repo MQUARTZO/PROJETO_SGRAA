@@ -10,4 +10,5 @@ public class SgraaApplication {
 		SpringApplication.run(SgraaApplication.class, args);
 	}
 
+	
 }
